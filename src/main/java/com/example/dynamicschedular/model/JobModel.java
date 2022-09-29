@@ -1,15 +1,15 @@
 package com.example.dynamicschedular.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.util.UUID;
 
+/*
+Custom class with the necessary fields to create a schedule
+ */
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
 public class JobModel {
 
         private UUID id = UUID.randomUUID();
@@ -24,6 +24,10 @@ public class JobModel {
         private String cronExpression;
 
         private boolean isEnabled = true;
+
+        public void setId(UUID id) {
+                this.id = id;
+        }
 
         public void setEnabled(boolean isEnabled) {
                 this.isEnabled = isEnabled;

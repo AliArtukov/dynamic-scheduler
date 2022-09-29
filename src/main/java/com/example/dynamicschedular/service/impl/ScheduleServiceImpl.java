@@ -29,6 +29,9 @@ public class ScheduleServiceImpl implements ScheduleService {
         this.dbQueryService = dbQueryService;
     }
 
+    /*
+    sayHello service to check the health of the project (if the project is working returns 'Hello')
+     */
     @Override
     public ResponseEntity<String> sayHello() {
 
@@ -37,6 +40,9 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     }
 
+    /*
+    createJob service for creating a new task and adding it to the task schedule
+     */
     @Override
     public ResponseEntity<JobModel> createJob(JobModel job) {
 
@@ -56,6 +62,9 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     }
 
+    /*
+    getJobs service for getting a list of all tasks that are either working or resting but not deleted
+     */
     @Override
     public ResponseEntity<List<JobModel>> getJobs() {
 
@@ -67,6 +76,9 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     }
 
+    /*
+    pauseJob service for suspending a task from schedules by task ID
+     */
     @Override
     public ResponseEntity<String> pauseJob(UUID jobID) {
 
@@ -88,6 +100,9 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     }
 
+    /*
+    restartJob task restart service from schedules by task ID
+     */
     @Override
     public ResponseEntity<String> restartJob(UUID jobID) {
 
@@ -116,6 +131,9 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     }
 
+    /*
+    removeJob service for deleting tasks from schedules by task ID
+     */
     @Override
     public ResponseEntity<String> removeJob(UUID jobID) {
 

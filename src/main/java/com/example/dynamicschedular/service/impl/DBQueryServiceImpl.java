@@ -10,17 +10,21 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 @Repository
 public class DBQueryServiceImpl implements DBQueryService {
 
     private final Logger LOG = Logger.getLogger(DBQueryServiceImpl.class);
 
+    /*
+    sendQueryToDB service for sending requests from tasks in the schedule to the PostgreSQL database
+     */
     @Override
     public void sendQueryToDB(JobModel job) {
 
         try {
-            LOG.info(job.getName() + " start work at " + LocalTime.now());
+            LOG.info(job.getName() + " start work at " + LocalTime.now(ZoneId.of("Asia/Tashkent")));
 
             String dbURL = "jdbc:postgresql://localhost:5432/scheduler_db";
             String user = "postgres";

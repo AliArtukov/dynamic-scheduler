@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
+/*
+Custom class for response all http requests
+ */
 @Getter
 public class ResponseEntity<T> {
 

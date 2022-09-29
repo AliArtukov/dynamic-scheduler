@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.util.concurrent.ScheduledFuture;
 
+/*
+Custom class for saving task data and the schedule itself
+ */
 @AllArgsConstructor
 @Data
 public class ScheduledJob {

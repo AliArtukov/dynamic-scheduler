@@ -15,6 +15,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    /*
+    Add one user to userDetails
+     */
     @Bean
     public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager uds = new InMemoryUserDetailsManager();
@@ -27,6 +30,9 @@ public class SecurityConfig {
         return NoOpPasswordEncoder.getInstance();
     }
 
+    /*
+    Closed all endpoints for all but user
+     */
     @Bean
     public SecurityFilterChain configuration(HttpSecurity httpSecurity) throws Exception {
 
