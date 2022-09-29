@@ -173,3 +173,7 @@ Response:
 
 Token for http requests:
 Basic dXNlcjpwYXNzd29yZDE=
+
+
+
+Postman collection exported to 'dynamic-scheduler.postman_collection.json' file saved in 'src.main.resources' directory.

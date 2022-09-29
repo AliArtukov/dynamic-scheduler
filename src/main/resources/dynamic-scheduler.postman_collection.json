@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "b1b08b33-1ee6-42e5-a206-11e32cf678a1",
+		"name": "dynamic-scheduler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13118709"
+	},
+	"item": [
+		{
+			"name": "sayHello",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/schedule/sayHello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"schedule",
+						"sayHello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createJob",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"create new product\",\r\n    \"cronExpression\": \"0/10 * * * * *\",\r\n    \"queryToDB\": \"insert into product (id, name, model, price) values ((nextval('product_id_seq')), 'Nokia', (concat('M', (select last_value from product_id_seq))), (trunc((random() * 1000)::numeric, 2)));\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/schedule/createJob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"schedule",
+						"createJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeJob",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/schedule/removeJob/d1dd41d9-f853-4852-a70a-b4d02867817e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"schedule",
+						"removeJob",
+						"d1dd41d9-f853-4852-a70a-b4d02867817e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getJobs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/schedule/getJobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"schedule",
+						"getJobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restartJob",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/schedule/restartJob/d1dd41d9-f853-4852-a70a-b4d02867817e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"schedule",
+						"restartJob",
+						"d1dd41d9-f853-4852-a70a-b4d02867817e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pauseJob",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/schedule/pauseJob/d1dd41d9-f853-4852-a70a-b4d02867817e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"schedule",
+						"pauseJob",
+						"d1dd41d9-f853-4852-a70a-b4d02867817e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
